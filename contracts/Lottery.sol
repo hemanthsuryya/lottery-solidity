@@ -1,17 +1,5 @@
 pragma solidity ^0.4.16;
 
-// contract Inbox {
-//     string public message;
-
-//     function Inbox (string memory initialMessage) public {
-//         message = initialMessage;
-//     }
-
-//     function setMessage(string newMessage) public {
-//         message = newMessage;
-//     }
-// }
-
 contract Lottery {
     address public manager;
     address[] public players;
@@ -21,7 +9,7 @@ contract Lottery {
     }
     
     function enter() public payable {
-        require(msg.value >= 1 ether);
+        require(msg.value >= 0.01 ether);
         players.push(msg.sender);
     }
     
